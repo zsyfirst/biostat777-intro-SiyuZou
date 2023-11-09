@@ -4,21 +4,21 @@
     "href": "index.html",
     "title": "Personal website",
     "section": "",
-    "text": "This is Siyu Zou’s website.\nTo learn more about Siyu Zou’s research, visit her Research Gate"
+    "text": "This is Siyu Zou’s website."
   },
   {
     "objectID": "index.html#self-introduction",
     "href": "index.html#self-introduction",
     "title": "Personal website",
     "section": "Self Introduction",
-    "text": "Self Introduction\nSiyu Zou is a first-year MHS student majoring in Epidemiology at Johns Hopkins University, her interest focus on prevention and control of cardiovascular disease.\n\n\n\n\n\n\nA image of Siyu Zou"
+    "text": "Self Introduction\nSiyu Zou is a first-year MHS student majoring in Epidemiology at Johns Hopkins University."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About me",
+    "title": "About Siyu",
     "section": "",
-    "text": "About Me\n\nEducation\nPeking University | Beijing, China  Bachelor of Medicine | Sept 2017 - June 2022 \nJohns Hopkins University | Baltimore, US  Master of Health Science | Aug 2023 - June 2025 \n\n\nResearch interest\nCardiovascular Disease (CVD) prevention and control.  The prevention of stroke and cognitive decline, which might result from poorly controlled CVD risk factors.\n\n\nExperience\nTsinghua University | Research Assistant (Full-time) | July 2022 - June 2023  Peking University | Research Assistant (Part-time) | May 2018 - June 2022  Duke Kunshan University | Research Assistant (Part-time) | Jan 2021 - Dec 2021"
+    "text": "Education\nPeking University | Beijing, China  Bachelor of Medicine | Sept 2017 - June 2022 \nJohns Hopkins University | Baltimore, US  Master of Health Science | Aug 2023 - June 2025 \n\n\nResearch interest\nCardiovascular Disease (CVD) prevention and control.  The prevention of stroke and cognitive decline, which might result from poorly controlled CVD risk factors.\n\n\nExperience\nTsinghua University | Research Assistant (Full-time) | July 2022 - June 2023  Peking University | Research Assistant (Part-time) | May 2018 - June 2022  Duke Kunshan University | Research Assistant (Part-time) | Jan 2021 - Dec 2021"
   },
   {
     "objectID": "Example analysis.html",
@@ -75,5 +75,12 @@
     "title": "Example analysis",
     "section": "list out functions",
     "text": "list out functions\ndplyr: mutate, select, filter, summarise, arrange ggplot2: geom_smooth, geom_boxplot, geom_point"
+  },
+  {
+    "objectID": "index.html#research-interest",
+    "href": "index.html#research-interest",
+    "title": "Personal website",
+    "section": "Research interest",
+    "text": "Research interest\nSiyu is interested in understanding the role of environmental factors in the prevention and control of cardiovascular diseases.  To learn more about Siyu Zou’s research, visit her Research Gate"
   }
 ]
