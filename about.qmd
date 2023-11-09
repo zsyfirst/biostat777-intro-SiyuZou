@@ -1,0 +1,24 @@
+---
+title: "About me"
+---
+
+# About Me
+
+### Education
+
+Peking University | Beijing, China  <br>
+Bachelor of Medicine | Sept 2017 - June 2022  <br>
+
+Johns Hopkins University | Baltimore, US   <br>
+Master of Health Science | Aug 2023 - June 2025  <br>
+
+### Research interest
+
+Cardiovascular Disease (CVD) prevention and control.   <br>
+The prevention of stroke and cognitive decline, which might result from poorly controlled CVD risk factors.
+
+### Experience
+
+Tsinghua University | Research Assistant (Full-time) | July 2022 - June 2023  <br>
+Peking University | Research Assistant (Part-time) | May 2018 - June 2022   <br>
+Duke Kunshan University | Research Assistant (Part-time) | Jan 2021 - Dec 2021  <br>

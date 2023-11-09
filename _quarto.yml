@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Personal website of Siyu Zou"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: Example analysis.qmd
+        text: Example Analysis
+
+format:
+  html:
+    theme: minty
+    css: styles.css
+    toc: true
+    page-layout: full
+
+editor: visual
+bibliography: bib.bib
+
+
+
+
+
+
+

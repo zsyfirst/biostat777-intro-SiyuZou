@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Personal website",
+    "section": "",
+    "text": "This is Siyu Zou’s website.\nTo learn more about Siyu Zou’s research, visit her Research Gate"
+  },
+  {
+    "objectID": "index.html#self-introduction",
+    "href": "index.html#self-introduction",
+    "title": "Personal website",
+    "section": "Self Introduction",
+    "text": "Self Introduction\nSiyu Zou is a first-year MHS student majoring in Epidemiology at Johns Hopkins University, her interest focus on prevention and control of cardiovascular disease.\n\n\n\n\n\n\nA image of Siyu Zou"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "About Me\n\nEducation\nPeking University | Beijing, China  Bachelor of Medicine | Sept 2017 - June 2022 \nJohns Hopkins University | Baltimore, US  Master of Health Science | Aug 2023 - June 2025 \n\n\nResearch interest\nCardiovascular Disease (CVD) prevention and control.  The prevention of stroke and cognitive decline, which might result from poorly controlled CVD risk factors.\n\n\nExperience\nTsinghua University | Research Assistant (Full-time) | July 2022 - June 2023  Peking University | Research Assistant (Part-time) | May 2018 - June 2022  Duke Kunshan University | Research Assistant (Part-time) | Jan 2021 - Dec 2021"
+  },
+  {
+    "objectID": "Example analysis.html",
+    "href": "Example analysis.html",
+    "title": "Example analysis",
+    "section": "",
+    "text": "Based on the U.S. BUREAU OF LABOR STATISTICS (“CPS Tables : U.s. Bureau of Labor Statistics” n.d.): Which race and sex group earn the most of money every week? What’s the trend of the earning over the last 10 years?"
+  },
+  {
+    "objectID": "Example analysis.html#question",
+    "href": "Example analysis.html#question",
+    "title": "Example analysis",
+    "section": "",
+    "text": "Based on the U.S. BUREAU OF LABOR STATISTICS (“CPS Tables : U.s. Bureau of Labor Statistics” n.d.): Which race and sex group earn the most of money every week? What’s the trend of the earning over the last 10 years?"
+  },
+  {
+    "objectID": "Example analysis.html#audience",
+    "href": "Example analysis.html#audience",
+    "title": "Example analysis",
+    "section": "Audience",
+    "text": "Audience\nPeople who are interested in the labor force and weekly median earnings by race/gender/age group over time in America.(“Technical Documentation (CPS) : U.s. Bureau of Labor Statistics” n.d.)"
+  },
+  {
+    "objectID": "Example analysis.html#original-data",
+    "href": "Example analysis.html#original-data",
+    "title": "Example analysis",
+    "section": "Original data",
+    "text": "Original data\nData comes from TidyTuesday, which is a weekly podcast and global community activity brought to you by the R4DS Online Learning Community. Archive of datasets from the 2021 series of TidyTuesday events\nData Source for this project\n\nlibrary(\"tidytuesdayR\")\nlibrary(\"here\")\nlibrary(\"tidyverse\")\n# library(\"lubridate\")\n\nIn this project, one datasets comes from TidyTuesday would be used. Specifically, we will use the following data from February 23th 2021. To access the data, you need to install the tidytuesdayR R package and use the function tt_load() with the date of ‘2021-02-23’ to load the data.\n\n# tuesdata &lt;- tidytuesdayR::tt_load(\"2021-02-23\")\n# employed &lt;- tuesdata$employed\n\n# tests if a directory named \"data\" exists locally\nif (!dir.exists(here(\"data\"))) {\n    dir.create(here(\"data\"))\n}\n\n# saves data only once (not each time you knit a R Markdown)\nif (!file.exists(here(\"data\", \"employed.RDS\"))) {\n    url_csv &lt;- \"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-23/employed.csv\"\n    employed &lt;- readr::read_csv(url_csv)\n\n    # save the file to RDS objects\n    saveRDS(employed, file = here(\"data\", \"employed.RDS\"))\n}\n\nRows: 8184 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (4): industry, major_occupation, minor_occupation, race_gender\ndbl (3): industry_total, employ_n, year\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nemployed &lt;- readRDS(here(\"data\", \"employed.RDS\"))\n\nearn &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-23/earn.csv')\n\nRows: 4224 Columns: 8\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (4): sex, race, ethnic_origin, age\ndbl (4): year, quarter, n_persons, median_weekly_earn\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nas_tibble(employed)\n\n# A tibble: 8,184 × 7\n   industry                major_occupat…¹ minor…² race_…³ indus…⁴ emplo…⁵  year\n   &lt;chr&gt;                   &lt;chr&gt;           &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;\n 1 Agriculture and related Management, pr… Manage… TOTAL   2349000  961000  2020\n 2 Agriculture and related Management, pr… Profes… TOTAL   2349000   58000  2020\n 3 Agriculture and related Service occupa… Protec… TOTAL   2349000   13000  2020\n 4 Agriculture and related Service occupa… Servic… TOTAL   2349000   94000  2020\n 5 Agriculture and related Sales and offi… Sales … TOTAL   2349000   12000  2020\n 6 Agriculture and related Sales and offi… Office… TOTAL   2349000   96000  2020\n 7 Agriculture and related Natural resour… Farmin… TOTAL   2349000  931000  2020\n 8 Agriculture and related Natural resour… Constr… TOTAL   2349000   10000  2020\n 9 Agriculture and related Natural resour… Instal… TOTAL   2349000   33000  2020\n10 Agriculture and related Production, tr… Produc… TOTAL   2349000   42000  2020\n# … with 8,174 more rows, and abbreviated variable names ¹​major_occupation,\n#   ²​minor_occupation, ³​race_gender, ⁴​industry_total, ⁵​employ_n\n\n\n\nif (!file.exists(here(\"data\", \"tuesdata_employed_status.RDS\"))) {\n    tuesdata &lt;- tidytuesdayR::tt_load(\"2021-02-23\")\n    earn &lt;- tuesdata$earn\n    employed &lt;- tuesdata$employed\n\n    # save the files to RDS objects\n    saveRDS(tuesdata$earn, file = here(\"data\", \"tuesdata_earn.RDS\"))\n    saveRDS(tuesdata$employed, file = here(\"data\", \"tuesdata_employed.RDS\"))\n}\n\n--- Compiling #TidyTuesday Information for 2021-02-23 ----\n\n\n--- There are 2 files available ---\n\n\n--- Starting Download ---\n\n\n\n    Downloading file 1 of 2: `earn.csv`\n    Downloading file 2 of 2: `employed.csv`\n\n\n--- Download complete ---\n\nearn &lt;- readRDS(here(\"data\", \"tuesdata_earn.RDS\"))\nemployed &lt;- readRDS(here(\"data\", \"tuesdata_employed.RDS\"))"
+  },
+  {
+    "objectID": "Example analysis.html#data-dictionary",
+    "href": "Example analysis.html#data-dictionary",
+    "title": "Example analysis",
+    "section": "data dictionary",
+    "text": "data dictionary\nHere is a data dictionary for what all the column names mean: data dictionary"
+  },
+  {
+    "objectID": "Example analysis.html#data-wrangling",
+    "href": "Example analysis.html#data-wrangling",
+    "title": "Example analysis",
+    "section": "data wrangling",
+    "text": "data wrangling\n\n\n\n\n\n\nNote\n\n\n\nNote that this data weangling used 5 functions from dplyr, including: select, mutate,filter,summarise,arrange\n\n\n\nglimpse(earn)\n\nRows: 4,224\nColumns: 8\n$ sex                &lt;chr&gt; \"Both Sexes\", \"Both Sexes\", \"Both Sexes\", \"Both Sex…\n$ race               &lt;chr&gt; \"All Races\", \"All Races\", \"All Races\", \"All Races\",…\n$ ethnic_origin      &lt;chr&gt; \"All Origins\", \"All Origins\", \"All Origins\", \"All O…\n$ age                &lt;chr&gt; \"16 years and over\", \"16 years and over\", \"16 years…\n$ year               &lt;dbl&gt; 2010, 2010, 2010, 2010, 2011, 2011, 2011, 2011, 201…\n$ quarter            &lt;dbl&gt; 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, …\n$ n_persons          &lt;dbl&gt; 96821000, 99798000, 101385000, 100120000, 98329000,…\n$ median_weekly_earn &lt;dbl&gt; 754, 740, 740, 752, 755, 753, 753, 764, 769, 771, 7…\n\nearn_clean &lt;- earn %&gt;%\n      select(sex, race, age, year, median_weekly_earn) %&gt;%\n      mutate(\n            age_group = case_when(  age == \"16 to 24 years\" ~ 1 ,\n                                    age == \"25 to 54 years\" ~ 2 ,\n                                    age == \"55 years and over\" ~ 3 ,\n                                    ),\n            sex_group = factor(sex, levels = c(\"Both Sexes\", \"Men\", \"Women\") , labels = c(0, 1, 2))\n      )  %&gt;%\n      filter(age_group == 2 ) %&gt;%\n      mutate(Race_group = factor(race, levels = c(\"All Races\", \"Asian\", \"Black or African American\",\"White\") , labels = c(0, 1, 2, 3) ))\n\nadults_earn_race &lt;- earn_clean %&gt;%\n      group_by( race, year) %&gt;% \n      summarise(\n            year_earn = sum(median_weekly_earn)\n      )  %&gt;%\n      arrange(year, .by_group = TRUE)\n\nadults_earn_sex &lt;- earn_clean %&gt;%\n      group_by( sex_group, year) %&gt;% \n      summarise(\n            year_earn = sum(median_weekly_earn)\n      ) %&gt;%\n      arrange(desc(year), .by_group = TRUE)\n\n\n\n\n\n\n\nthree plots\n\n\n\nThere are three plots to show the median weekly earning over time, stratified by race and sex.\n\n\n\nadults_earn_race %&gt;%\n      ggplot( aes(year, year_earn, color = race))  +\n      geom_smooth(stat = \"smooth\", position = \"identity\", method = \"lm\") +\n      labs(\n            title = \"Median weekly earning by race over time\",\n            subtitle = \"Increasing trend of weekly earning from 2010 to 2020\",\n            caption = \"Siyu Zou\",\n            y = \"Median weekly earning (Current dollars)\",\n            x = \"Time (Year)\"\n      ) +\n      scale_x_continuous(breaks = seq(2010, 2020, 1), labels = seq(2010, 2020, 1) ) +\n      theme_minimal() +\n      theme(\n          plot.title = element_text(hjust = 0.5, face = \"bold\", size = 15),\n          plot.subtitle = element_text(hjust = 0.5, color = \"darkblue\", face = \"italic\", size = 13),\n          axis.title = element_text(color = \"black\", size = 12),\n          axis.text = element_text(color = \"black\", size = 11)\n      )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nadults_earn_sex %&gt;%\n      ggplot( aes(year, year_earn, color = sex_group))  +\n      geom_boxplot(stat = \"boxplot\", position = \"dodge2\" ) +\n      labs(\n            title = \"Median weekly earning by sex over time\",\n            subtitle = \"Increasing trend of weekly earning from 2010 to 2020\",\n            caption = \"Siyu Zou\",\n            y = \"Median weekly earning (Current dollars)\",\n            x = \"Time (Year)\"\n      ) +\n      scale_x_continuous(breaks = seq(2010, 2020, 1), labels = seq(2010, 2020, 1) ) +\n      theme_minimal() +\n      theme(\n          plot.title = element_text(hjust = 0.5, face = \"bold\", size = 15),\n          plot.subtitle = element_text(hjust = 0.5, color = \"darkblue\", face = \"italic\", size = 13),\n          axis.title = element_text(color = \"black\", size = 12),\n          axis.text = element_text(color = \"black\", size = 11)\n      )\n\n\n\n\n\nMale vs female, colored by sex\n\n\n\n\nearn_clean %&gt;%\n      ggplot(aes(year, median_weekly_earn, color = sex_group)) +\n      geom_point( ) +\n      geom_smooth(method = 'loess') +\n      facet_grid( sex ~ race , scales = \"free\") +\n      labs(\n            title = \"Median weekly earning over time\",\n            subtitle = \"Increasing trend, stratified by race and sex\",\n            x = \"Time(year)\",\n            y = \"Median weekly earning (Current dollars)\",\n            caption = \"Siyu Zou\"\n      ) +\n      scale_x_continuous(breaks = seq(2010, 2020, 3), labels = seq(2010, 2020, 3) ) +\n      theme_minimal() +\n      theme(\n            strip.text = element_text(color = \"#1380A1\" , size = 8),  \n            strip.background = element_rect(fill = \"white\", color = \"white\", linewidth = 1  ),\n            plot.title = element_text(hjust = 0.5, color = \"black\", face = \"bold\", size = 15) , \n            plot.subtitle = element_text(hjust = 0.5, color = \"black\", face = \"italic\", size = 13) ,  \n            plot.background = element_rect(fill = \"white\" ),\n    \n            # panel.grid.major = element_line(color = \"white\", linewidth = 0.5), \n            # panel.grid.minor = element_line(color = \"white\"),\n    \n            axis.title = element_text(color = \"black\",size = 12),\n            axis.text = element_text(color = \"black\", size = 9)\n      )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nInclude one image or table (not one you created yourself, but one you have saved locally or one from the web)\n\n\n\n\n\n\nA image from the U.S. Bureau of Labor Statistics (BLS)\n\n\n\nProvided an overview of Blacks in the labor force from 1976 to projected 2016-26. Aging labor force, lower participation rates (Toossi n.d.)\n\n\n\nThe Black share of the labor force by age group continues to shift. The labor force share of Blacks ages 55 and older was larger in 2016, and is projected to be larger in 2026, than that of the 16- to 24-year-old group."
+  },
+  {
+    "objectID": "Example analysis.html#summarize",
+    "href": "Example analysis.html#summarize",
+    "title": "Example analysis",
+    "section": "Summarize",
+    "text": "Summarize\nWhich race and sex group earn the most of money every week? Based on the U.S. Bureau of Labor Statistics (BLS) projects, in the past 10 years, all race groups’ weekly earning were increasing. Specially, Asian had the highest median weekly earning from 2010 to 2020. Black or African American had the lowest median weekly earning from 2010 to 2020. Compared to women, men had higher median weekly earning. In total, Asian men had the highest median weekly earning, Black or African American women had the lowest median weekly earning over the 10 years."
+  },
+  {
+    "objectID": "Example analysis.html#list-out-functions",
+    "href": "Example analysis.html#list-out-functions",
+    "title": "Example analysis",
+    "section": "list out functions",
+    "text": "list out functions\ndplyr: mutate, select, filter, summarise, arrange ggplot2: geom_smooth, geom_boxplot, geom_point"
+  }
+]
